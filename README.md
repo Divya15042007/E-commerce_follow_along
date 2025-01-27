@@ -97,3 +97,4 @@ Integrated an email notification system to send a welcome email to the user afte
 
 7. JWT Token Generation:
 Added a method to generate JWT tokens upon user login (for future use in authentication routes).
+
