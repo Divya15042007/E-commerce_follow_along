@@ -1,85 +1,22 @@
-,
-import React, { useState } from 'react'
-import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai'
-import styles  from "../../styles/styles"
-import { Link } from 'react-router-dom';
-const Login = () =>{
-    const [email , setEmail] = useState("");
-    const [password , setPassword] = useState("");
-    const [visible,setVisible] = useState(true);
-  return (
-    
-    <div className=' min-h-screen bg-gray-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8'> 
-        <div className='sa:mx-auto sa:w-full sa:max-w-md'>
-          <h2 className='mt-6 text-center text-3xl font-extrabold text-grey-900'>
-             Login to your account
-          </h2>
-        </div>
-        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form  className="space-y-6">
-            <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email address
-                </label> 
-                <div className="mt-1">
-                    <input type="text" name='email' placeholder='Enter Email here' autoComplete='email' required value={email} onChange={(e)=> setEmail(e.target.value)} className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' />
-                </div>
-            </div>
-            <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                    Password
-                </label> 
-                <div className="mt-1 relative">
-                    <input type={visible ? "text":"password"} name='password' placeholder='Enter password here' autoComplete='password' required value={password} onChange={(e)=> setPassword(e.target.value)} className='appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' />
-                   {
-                    visible ? (
-                        <AiOutlineEye
-                        className='absolute right-2 top-2 cursor-pointer'
-                        size={25}
-                        onClick={() => setVisible(false)}
-                      />
-                   ):
-                   (
-                        <AiOutlineEyeInvisible
-                        className='absolute right-2 top-2 cursor-pointer'
-                        size={25}
-                        onClick={() => setVisible(true)}
-                      />
-                   )
-}
+const styles = {
+  custom_container: "w-11/12 hidden sm:block",
+  heading:
+    "text-[27px] text-center md:text-start font-[600] font-Roboto pb-[20px]",
+  section: "w-11/12 mx-auto",
+  productTitle: "text-[25px] font-[600] font-Roboto text-[#333]",
+  productDiscountPrice: "font-bold text-[18px] text-[#333] font-Roboto",
+  price: "font-[500] text-[16px] text-[#d55b45] pl-3 mt-[-4px] line-through",
+  shop_name: "pt-3 text-[15px] text-blue-400 pb-3",
+  active_indicator: "absolute bottom-[-27%] left-0 h-[3px] w-full bg-[crimson]",
+  button:
+    "w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer",
+  cart_button:
+    "px-[20px] h-[38px] rounded-[20px] bg-[#f63b60] flex items-center justify-center cursor-pointer",
+  cart_button_text: "text-[#fff] text-[16px] font-[600]",
+  input: "w-full border p-1 rounded-[5px]",
+  activeStatus:
+    "w-[10px] h-[10px] rounded-full absolute top-0 right-1 bg-[#40d132]",
+  noramlFlex: "flex items-center",
+};
 
-
-
-                </div>
-            </div>
-             <div className={`${styles.noramlFlex} justify-between`}>
-             <div className={`${styles.noramlFlex}`}>
-                 <input type="checkbox" name='remember-me' id='remember-me' className='h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded' />
-                  <label htmlFor="remember-me" className='ml-2 block text-sm text-gray-900'>
-                    Remember me
-                  </label>
-                  </div>
-                  <div className="text-sm">
-                    <a href="forgot-password" className="font-medium text-indigo-600 hover:text-indigo-500">
-                        Forgot your password
-                    </a>
-                  </div>
-             </div>
-             <div>
-                <button type='submit' className='group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700'>
-                    Submit
-                </button>
-             </div>
-             <div className={`${styles.noramlFlex} w-full relative`}>
-                 <h4>Not have any Account? </h4>
-                 <Link to="/signup" className='text-indigo-600 hover:text-indigo-500'> SignUp</Link>
-             </div>
-            </form>
-          </div>
-        </div>
-    </div>
-  )
-}
-
-export default Login
+export default styles;
