@@ -96,7 +96,7 @@ Stored user details (e.g., name, email, password, avatar) in MongoDB with encryp
 Integrated an email notification system to send a welcome email to the user after successful registration (using sendMail).
 
 7. JWT Token Generation:
-Added a method to generate JWT tokens upon user login (for future use in authentication routes).
+Added a method to generate JWT tokens upon user login (for future use in authentication routes).
 
 ### Milestone 7: Create Login Endpoint
 Task Completed ✅
@@ -106,4 +106,48 @@ Retrieved the corresponding user from the database.
 Validated the password using bcrypt.
 Compared the entered password with the stored hashed password for authentication.
 Generated a JWT token upon successful login for authentication.
-Implemented error handling for invalid credentials and server errors.
+Implemented error handling for invalid credentials and server errors.
+
+### Milestone 8: Product Card Component
+
+## Overview
+
+In Milestone 8, we focus on creating a reusable product card component and designing a homepage to display a collection of these cards. Each card will showcase key product details, such as the product's name, price, and image. The goal is to create a clean and organized layout that improves the user experience and allows for easy browsing of products. This milestone demonstrates the principles of component-based design and how to efficiently manage dynamic content within your app.
+
+## Features
+
+Reusable Product Card: A single card component that accepts dynamic product details as props and renders them in a uniform, visually appealing way. The product card includes:
+
+1. Product name
+2. Product image
+3. Product price
+
+Dynamic Rendering: Use of JavaScript array mapping to iterate through a list of products and dynamically render each product's card with its respective data.
+Homepage Layout: A structured layout, designed using either CSS Grid or Flexbox, to display multiple cards on the homepage in a responsive, organized manner.
+Consistent Design: The card component ensures that the product details are presented consistently across all cards, providing a seamless user experience
+
+### Milestone 9: Create Product Component
+
+## Overview
+
+In this milestone, we have implemented the Create Product component for the Follow-Along Ecommerce project. This component allows users to create new products by entering details such as name, description, category, tags, price, stock, email, and uploading images.
+
+## Features Implemented
+
+*Form Inputs:* Users can input product details including name, description, category, tags, price, stock, and email.
+
+*Image Upload & Preview:* Users can upload multiple images, which will be displayed as previews before submission.
+
+*Category Selection:* A dropdown to choose a product category.
+
+*Validation & Submission:* Required fields are enforced, and product data is logged on submission.
+
+*Memory Optimization:* Object URLs for image previews are revoked to prevent memory leaks.
+
+## Technologies Used
+
+*React:* Functional components and hooks (useState, useEffect).
+
+*Tailwind CSS:* For styling.
+
+*React Icons:* AiOutlinePlusCircle for the image upload button.
