@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const ErrorHandler = require("./middleware/error");
+const product = require("./controller/product");
 
 const app = express();
 
