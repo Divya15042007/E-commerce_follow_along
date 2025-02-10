@@ -1,12 +1,12 @@
 import React from "react";
-import Signup from "../components/auth/Signup";
+import Signup from "../components/auth/Signup.jsx";
 
-function SignupPage() {
-    return (
-        <div>
-            <Signup />
-        </div>
-    );
-}
+const SignupPage = () => {
+  return (
+    <div>
+      <Signup />
+    </div>
+  );
+};
 
 export default SignupPage;

@@ -4,6 +4,7 @@ import axios from "axios";
 
 const CreateProduct = () => {
   const [images, setImages] = useState([]);
+  const [previewImages, setPreviewImages] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -11,7 +12,6 @@ const CreateProduct = () => {
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
   const [email, setEmail] = useState("");
-  const [previewImages, setPreviewImages] = useState([]);
 
   const categoriesData = [
     { title: "Electronics" },
@@ -23,33 +23,29 @@ const CreateProduct = () => {
   const handleImagesChange = (e) => {
     const files = Array.from(e.target.files);
 
-    // Create preview URLs
-    const imagePreviews = files.map((file) => URL.createObjectURL(file));
+    setImages((prevImages) => prevImages.concat(files));
 
-    setImages((prevImages) => [...prevImages, ...files]);
-    setPreviewImages((prevPreviews) => [...prevPreviews, ...imagePreviews]);
+    const imagePreviews = files.map((file) => URL.createObjectURL(file));
+    setPreviewImages((prevPreviews) => prevPreviews.concat(imagePreviews));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Hi");
+
     const formData = new FormData();
     formData.append("name", name);
     formData.append("description", description);
     formData.append("category", category);
-    formData.append("tags", tags.trim()); // Ensure tags are a comma-separated string
+    formData.append("tags", tags);
     formData.append("price", price);
     formData.append("stock", stock);
     formData.append("email", email);
-    // Ensure images are appended correctly
-    images.forEach((image, index) => {
-      console.log(`Appending image ${index + 1}, image.name`);
+
+    images.forEach((image) => {
       formData.append("images", image);
     });
-    // Debugging FormData content
-    console.log("FormData before sending:");
-    formData.forEach((value, key) => {
-      console.log(key, value);
-    });
+
     try {
       const response = await axios.post(
         "http://localhost:8000/api/v2/product/create-product",
@@ -60,6 +56,7 @@ const CreateProduct = () => {
           },
         }
       );
+
       if (response.status === 201) {
         alert("Product created successfully!");
         setImages([]);
@@ -73,18 +70,14 @@ const CreateProduct = () => {
         setEmail("");
       }
     } catch (err) {
-      console.error(
-        "Error creating product:",
-        err.response?.data || err.message
-      );
-      alert(err.message);
+      console.error("Error creating product:", err);
+      alert("Failed to create product. Please check the data and try again.");
     }
   };
 
   return (
     <div className="w-[90%] max-w-[500px] bg-white shadow h-auto rounded-[4px] p-4 mx-auto">
       <h5 className="text-[24px] font-semibold text-center">Create Product</h5>
-
       <form onSubmit={handleSubmit}>
         <div className="mt-4">
           <label className="pb-1 block">
@@ -99,8 +92,7 @@ const CreateProduct = () => {
             required
           />
         </div>
-
-        <div className="mt-4">
+        <div>
           <label className="pb-1 block">
             Name <span className="text-red-500">*</span>
           </label>
@@ -113,7 +105,6 @@ const CreateProduct = () => {
             required
           />
         </div>
-
         <div className="mt-4">
           <label className="pb-1 block">
             Description <span className="text-red-500">*</span>
@@ -127,7 +118,6 @@ const CreateProduct = () => {
             required
           ></textarea>
         </div>
-
         <div className="mt-4">
           <label className="pb-1 block">
             Category <span className="text-red-500">*</span>
@@ -146,7 +136,6 @@ const CreateProduct = () => {
             ))}
           </select>
         </div>
-
         <div className="mt-4">
           <label className="pb-1 block">Tags</label>
           <input
@@ -157,7 +146,6 @@ const CreateProduct = () => {
             placeholder="Enter product tags"
           />
         </div>
-
         <div className="mt-4">
           <label className="pb-1 block">
             Price <span className="text-red-500">*</span>
@@ -171,7 +159,6 @@ const CreateProduct = () => {
             required
           />
         </div>
-
         <div className="mt-4">
           <label className="pb-1 block">
             Stock <span className="text-red-500">*</span>
@@ -185,13 +172,12 @@ const CreateProduct = () => {
             required
           />
         </div>
-
         <div className="mt-4">
           <label className="pb-1 block">
             Upload Images <span className="text-red-500">*</span>
           </label>
-
           <input
+            name="image"
             type="file"
             id="upload"
             className="hidden"
@@ -199,11 +185,9 @@ const CreateProduct = () => {
             onChange={handleImagesChange}
             required
           />
-
           <label htmlFor="upload" className="cursor-pointer">
             <AiOutlinePlusCircle size={30} color="#555" />
           </label>
-
           <div className="flex flex-wrap mt-2">
             {previewImages.map((img, index) => (
               <img
@@ -215,7 +199,6 @@ const CreateProduct = () => {
             ))}
           </div>
         </div>
-
         <button
           type="submit"
           className="w-full mt-4 bg-blue-500 text-white p-2 rounded"
