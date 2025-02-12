@@ -42,11 +42,7 @@ router.post(
         name,
         email,
         password: hashedPassword,
-        avatar: {
-          public_id: req.file?.filename || "",
-          url: fileUrl,
-        },
-      });
+        avatar: fileUrl   });
   
       res.status(201).json({ success: true, user});
     })
