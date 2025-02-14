@@ -356,3 +356,14 @@ In this milestone, we will create a page to display product details, choose quan
 - Implement an "Add to Cart" button.
 
 This milestone focuses on building a functional product info page for users.
+
+### Milestone 17: Add to Cart Backend  
+
+In this milestone, we will create a backend endpoint to add products to the cart and store them in the database.  
+
+#### Key Tasks:  
+- Update the user schema to store cart products.  
+- Create a cart schema to manage cart items.  
+- Write an endpoint to receive and store product details in the cart.  
+
+This milestone focuses on implementing backend cart functionality for seamless shopping.
