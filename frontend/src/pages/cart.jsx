@@ -8,7 +8,7 @@ const Cart = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v2/product/cartproducts?email=${'ayan10092018@gmail.com'}`)
+        fetch(`http://localhost:8000/api/v2/product/cartproducts?email=${'laptop123@gmail.com'}`)
           .then((res) => {
             if (!res.ok) {
               throw new Error(`HTTP error! status: ${res.status}`);
@@ -35,6 +35,7 @@ const Cart = () => {
                         <h1 className='text-2xl font-semibold'>Cart</h1>
                     </div>
                     <div className='w-full flex-grow overflow-auto px-3 py-2 gap-y-2'>
+                      
                         {
                             products.map(product => (
                                 <CartProduct key={product._id} {...product} />

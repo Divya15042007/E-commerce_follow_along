@@ -63,4 +63,4 @@ export default function Product({id, country, city, address1, address2, zipCode,
 			</div>
 		</div>
 	);
-}
+} 
