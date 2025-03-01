@@ -454,5 +454,16 @@ User-Friendly Interface: Ensures a smooth and intuitive process for selecting th
 Improved Order Accuracy: Helps in preventing errors by allowing users to review their address before confirming the order.
 
 
+# Milestone 24 🚀  
 
+## Overview  
+In this milestone, we will create an Order Confirmation page to display order details.  
 
+## Steps  
+1. Show all products being ordered.  
+2. Display the selected delivery address.  
+3. Show the total cart value.  
+4. Add a "Place Order" button at the bottom.  
+
+### Note  
+This milestone helps in understanding how to implement the place order functionality.
