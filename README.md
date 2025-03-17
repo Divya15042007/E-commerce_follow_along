@@ -529,7 +529,7 @@ In this milestone, we created a *My Orders* page for our frontend. This page fet
 
 
 
-<!-- ## README - Milestone 28: Cancel Order Feature  
+## README - Milestone 28: Cancel Order Feature  
 
 ### Overview  
 In this milestone, we enhanced the *My Orders* page by adding a *Cancel Order* button and implemented a backend endpoint to handle order cancellations.  
@@ -550,4 +550,4 @@ In this milestone, we enhanced the *My Orders* page by adding a *Cancel Order* b
 - README updated with milestone details.  
 - Repository link submitted as per guidelines.  
 
-🚀 *Milestone 28 completed successfully!* -->
+🚀 *Milestone 28 completed successfully!*
