@@ -551,3 +551,28 @@ In this milestone, we enhanced the *My Orders* page by adding a *Cancel Order* b
 - Repository link submitted as per guidelines.  
 
 🚀 *Milestone 28 completed successfully!*
+
+
+## Milestone-29 ##
+
+PayPal Integration - Setup Guide
+
+Step 1: Create a PayPal Sandbox Account
+
+Visit PayPal Developer Dashboard and sign in.
+
+Go to Sandbox Accounts and create an account.
+Copy and save the User ID.
+
+Step 2: Get PayPal Client ID
+
+Find your sandbox account and click Manage Accounts.
+Copy and save the Client ID.
+
+Step 3: Add Payment Options
+
+On the Order Confirmation Page, add radio buttons for:
+Cash on Delivery (COD)
+
+Online Payment (PayPal)
+Show PayPal buttons only when Online Payment is selected.
