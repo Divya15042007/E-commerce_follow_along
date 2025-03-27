@@ -22,14 +22,14 @@ const Login = () => {
     e.preventDefault();
     try {
       // Make the POST request to the backend (replace with your actual API endpoint)
-      const response = await axios.post("http://localhost:8000/api/v2/user/login", { email, password });
+      const response = await axios.post("http://localhost:8000/api/v2/user/login", { email, password }, {withCredentials: true,});
       
       // Assuming response contains a token or user data on successful login
       console.log(response.data);
-
+      alert("Logged in successfully!");
        // Dispatch email to Redux state (token is now handled via cookies)
        dispatch(setemail(email));
-       // Redirect to profile page after successful login
+       // Redirect to home or profile page after successful login
        navigate("/");
       
     } catch (error) {

@@ -634,7 +634,7 @@ In this milestone, we will implement global state management for storing the ema
 
 
 
-<!-- ### Milestone 33 - JWT Token & Cookie Storage
+### Milestone 33 - JWT Token & Cookie Storage
 
 # 1Overview
 
@@ -651,4 +651,4 @@ By the end of this milestone, you will:
 1. Generate JWT Token using the jsonwebtoken package.
 2. Store JWT Token in HTTP-only Cookies for better security.
 3. Set Token Expiry using the maxAge property.
-4. Send Token in Response to maintain user authentication -->
+4. Send Token in Response to maintain user authentication
